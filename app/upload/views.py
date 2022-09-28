@@ -1,15 +1,23 @@
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
+from django.http import HttpResponse
 
 
-def image_upload(request):
-    if request.method == "POST" and request.FILES["image_file"]:
-        image_file = request.FILES["image_file"]
-        fs = FileSystemStorage()
-        filename = fs.save(image_file.name, image_file)
-        image_url = fs.url(filename)
-        print(image_url)
-        return render(request, "upload.html", {
-            "image_url": image_url
-        })
-    return render(request, "upload.html")
+def index1(request):
+    params = {
+        'title': 'No.1',
+        'msg': 'Hello world!',
+        'link': 'Another',
+        'page': 'go to page2',
+    }
+    return render(request, 'upload.html', params)
+
+
+def index2(request):
+    params = {
+        'title': 'No.2',
+        'msg': 'Welcome to Japan!',
+        'link': 'Index',
+        'page': 'go to page1',
+    }
+    return render(request, 'upload.html', params)
