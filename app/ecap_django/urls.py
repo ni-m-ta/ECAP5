@@ -20,10 +20,12 @@ from django.conf.urls.static import static
 
 from upload.views import index1
 from upload.views import index2
+from home.views import home
 
 urlpatterns = [
     path('', index1, name='Index'),
     path('another/', index2, name='Another'),
+    path('home/', home, name='home'),
     path('admin/', admin.site.urls),
 ]
 
