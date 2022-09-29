@@ -22,18 +22,40 @@ body {
     left: 0;
   }
 
-    .header-logo{
-      height: 70px;
-      width: auto;
-      position: fixed;
-      top: 0;
-      left: 10px;
+    .header-icons{
+        display: flex;
+        justify-content: space-between;
     }
-  
-  .header-snsIcons{
-    width: 200px;
-    height: 100px;
-    display: flex;
-    justify-content: flex-end;
-    color: rgb(70, 70, 70);
-  }
+
+      .logo{
+        height: 100px;
+        width: auto;
+        position: fixed;
+        top: 0;
+        left: 10px;
+      }
+
+      .snsIcons{
+        width: 200px;
+        height: 100px;
+        float: right;
+        color: rgb(70, 70, 70);
+      }
+
+      .snsIcon{
+        padding-top: 10px;
+        padding-right: 5px;
+      }
+    
+    .header-options{
+      height: 50px;
+      width: 75%;
+      margin: 0 auto;
+    }
+
+      .header-option{
+        height: 50px;
+        width: 100px;
+        display: flex;
+        justify-content: space-around;
+      }
