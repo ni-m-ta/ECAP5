@@ -8,4 +8,3 @@ def login(request):
         'title': 'login',
     }
     return render(request, "login.html", params)
-    

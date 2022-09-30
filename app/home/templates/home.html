@@ -16,7 +16,7 @@
               <a href="https://twitter.com/TATSUYA_NISATO"><img class="snsIcon" src="{% static 'img/twitter.png' %}"></a>
               <a href="https://www.facebook.com/profile.php?id=100049389249541"><img class="snsIcon" src="{% static 'img/facebook.png' %}"></a>
               <a href="https://github.com/ni-m-ta"><img class="snsIcon" src="{% static 'img/github.png' %}"></a>
-              <a><img class="snsIcon" src="{% static 'img/login.png' %}"></a>
+              <a href="{% url link %}"><img class="snsIcon" src="{% static 'img/login.png' %}"></a>
            </div>
         </div>
         <div class="header-options">
@@ -33,7 +33,7 @@
         </div>
         <div class="start">
           <p>世界で活躍するリーダーになるべく<br>共に学び共に成長しよう。</p>
-          <a class="start-btn btn">最初の一歩</a>
+          <a class="start-btn btn" href="{% url link %}">最初の一歩</a>
         </div>
       </div>
     </div>
