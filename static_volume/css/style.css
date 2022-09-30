@@ -1,7 +1,8 @@
 body {
     margin: 0;
     font-family: "Hiragino Kaku Gothic ProN";
-    padding-top: 130px;
+    padding-top: 150px;   
+    color: rgb(70, 70, 70); 
   }
   
   a {
@@ -54,7 +55,7 @@ body {
     
     .header-options{
         height: 50px;
-        width: 75%;
+        width: 80%;
         margin: 0 auto;
         display: flex;
         justify-content: space-around;
@@ -62,9 +63,12 @@ body {
 
       .header-option{
         height: 50px;
-        width: 100px;
+        width: 20%;
         text-align: center;
         line-height: 50px;
+        border-left: 1px solid;
+        border-right: 1px solid;
+        border-color: rgb(150, 250, 170);
       }
 
   .body-top{
@@ -85,7 +89,7 @@ body {
       .lead{
         height: 300px;
         width: 60%;
-        margin-top: 40px;
+        margin: 0;
         font-size: 30px;
         letter-spacing: 0.25em;
       }
@@ -93,7 +97,7 @@ body {
       .start{
         height: 300px;
         width: 28%;
-        margin-top: 100px;
+        margin-top: 80px;
         text-align: center;
       }
 
@@ -106,3 +110,51 @@ body {
           text-align: center;
           line-height: 60px;
         }
+
+  .body-middle{
+    height: 300px;
+    width: 100%;
+  }
+
+    .middle-container{
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+    }
+
+      .middle-option{
+        height: 300px;
+        width: 20%;
+      }
+
+  footer{
+    height: 100px;
+    width: 100%;
+    background-color: gray;
+    color: white;
+  }
+
+    .footer-options{
+      height: 70px;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+    }
+
+      .footer-option{
+        height: 50px;
+        width: 25%;
+        display: block;
+        text-align: center;
+        line-height: 50px;
+      }
+
+    .copyright{
+      height: 29px;
+      width: 100%;
+      margin: 0;
+      border-top: 1px solid;
+      border-color: black;
+      text-align: center;
+    }
+
