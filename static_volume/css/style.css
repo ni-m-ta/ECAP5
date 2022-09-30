@@ -29,7 +29,7 @@ body {
     .header-icons{
         display: flex;
         justify-content: space-between;
-        border: 1px solid;
+        border-bottom: 1px solid;
         border-color: rgb(150, 250, 170);
     }
 
