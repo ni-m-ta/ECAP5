@@ -22,11 +22,13 @@ from upload.views import index1
 from upload.views import index2
 from home.views import home
 from login.views import login
+from signUp.views import AccountRegistration
 
 urlpatterns = [
     path('', home, name='home'),
     path('login/', login, name='login'),
     path('index/', index1, name='Index'),
+    path('signup/', AccountRegistration.as_view(), name='register'),
     path('another/', index2, name='Another'),
     path('admin/', admin.site.urls),
 ]
