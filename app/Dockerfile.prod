@@ -26,6 +26,9 @@ RUN flake8 --ignore=E501,F401 .
 COPY ./requirements.txt .
 RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/app/wheels -r requirements.txt
 
+# install argon2
+RUN python3 -m pip install argon2_cffi
+RUN python3 -m pip install -U cffi pip setuptools
 
 #########
 # FINAL #
