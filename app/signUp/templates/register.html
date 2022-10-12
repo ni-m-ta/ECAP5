@@ -18,7 +18,6 @@
                 <form enctype="multipart/form-data" method="post">
                     {% csrf_token %}
                     {{ account_form.as_table }}
-                    {{ add_account_form.as_table}}
                     {{ add_account_form.as_table }}
                     <tr><td></td><td>
                     <input class="btn" type="submit" name="" value="Sign up">
