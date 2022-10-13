@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     "upload",
     "home",
     "login",
-    "signUp",
+    "signup",
 ]
 
 MIDDLEWARE = [

@@ -20,7 +20,7 @@ class AccountRegistration(TemplateView):
         self.params["account_form"] = AccountForm()
         self.params["add_account_form"] = AddAccountForm()
         self.params["AccountCreate"] = False
-        return render(request, "register.html", context=self.params)
+        return render(request, "signup.html", context=self.params)
 
     # To do post
     def post(self, request):
@@ -51,4 +51,4 @@ class AccountRegistration(TemplateView):
             # If the form is not good
             print(self.params["account_form"].errors)
 
-        return render(request, "register.html", context=self.params)
+        return render(request, "signup.html", context=self.params)
