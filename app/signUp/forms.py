@@ -14,12 +14,12 @@ class AccountForm(forms.ModelForm):
         # To assign a field
         fields = ('username', 'email', 'password')
         # To assign a field name
-        labels = {'username': "userID", 'email': "e-mail"}
+        labels = {'username': "userID", 'email': "Email"}
 
 
 class AddAccountForm(forms.ModelForm):
     class Meta():
         # To assign a model class
         model = Account
-        fields = ('last_name', 'first_name', )
-        labels = {'last_name': "Last Name", 'first_name': "First Name", }
+        fields = ('first_name', 'last_name', )
+        labels = {'first_name': "First Name", 'last_name': "Last Name", }
