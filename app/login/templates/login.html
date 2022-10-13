@@ -2,6 +2,7 @@
 {% load static %}
 <html lang="en">
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}" />
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,10 +29,24 @@
     </header>
     <div class="top-login">
         <div class="top-container container">
-            <div class="logins">
-                <p class="login-name">Login</p>
-                
-            </div>
+          <div class="reg">
+            <form method="post" action="{url 'Login' %}">
+              {% csrf_token %}
+
+              <table class="reg_form">
+                <tr>
+                  <td><label for="userid">UserID: </label> </td>
+                  <td><input type="text" name="userid"></td>
+                  <td><label for="password">Password: </label></td>
+                  <td><input type="password" name="password"></td>
+                </tr>
+              </table>
+
+              <input type="submit" class="btn" value="Login">
+            </form>
+          </div>
+          <p class="message">Do you have an account?: </p>
+          <a href="{% url 'signup' %}">Create your account</a>
         </div>
     </div>
   </body>
