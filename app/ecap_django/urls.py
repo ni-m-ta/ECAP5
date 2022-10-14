@@ -21,14 +21,18 @@ from django.conf.urls.static import static
 from upload.views import index1
 from upload.views import index2
 from home.views import home
-from login.views import login
+from login.views import Login
 from signup.views import AccountRegistration
+from login.views import Logout
+from myaccount.views import myaccount
 
 urlpatterns = [
     path('', home, name='home'),
-    path('login/', login, name='login'),
+    path('login/', Login, name='Login'),
+    path('logout/', Logout, name='Logout'),
     path('index/', index1, name='Index'),
     path('signup/', AccountRegistration.as_view(), name='signup'),
+    path('myaccount/', myaccount, name='myaccount'),
     path('another/', index2, name='Another'),
     path('admin/', admin.site.urls),
 ]
