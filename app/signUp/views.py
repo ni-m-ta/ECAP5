@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from .forms import AccountForm, AddAccountForm
+from signup.forms import AccountForm, AddAccountForm
 from django.contrib.auth import authenticate
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse

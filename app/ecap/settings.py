@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     "home",
     "login",
     "signup",
-    "myaccount"
+    "myaccount",
 ]
 
 MIDDLEWARE = [
@@ -59,7 +59,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ecap_django.urls'
+ROOT_URLCONF = 'ecap.urls'
 
 TEMPLATES = [
     {
@@ -77,7 +77,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ecap_django.wsgi.application'
+WSGI_APPLICATION = 'ecap.wsgi.application'
 
 
 # Database
