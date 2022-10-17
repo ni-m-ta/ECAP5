@@ -18,8 +18,6 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from upload.views import index1
-from upload.views import index2
 from home.views import home
 from login.views import Login
 from signup.views import AccountRegistration
@@ -30,10 +28,8 @@ urlpatterns = [
     path('', home, name='home'),
     path('login/', Login, name='Login'),
     path('logout/', Logout, name='Logout'),
-    path('index/', index1, name='Index'),
     path('signup/', AccountRegistration.as_view(), name='signup'),
     path('myaccount/', myaccount, name='myaccount'),
-    path('another/', index2, name='Another'),
     path('admin/', admin.site.urls),
 ]
 

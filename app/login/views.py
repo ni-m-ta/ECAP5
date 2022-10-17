@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from signup.forms import AccountForm, AddAccountForm
-from django.core.files.storage import FileSystemStorage
 
 from django.contrib.auth import authenticate, login, logout
 from myaccount.views import myaccount
@@ -23,7 +22,7 @@ def Login(request):
         # To validate users
         if user:
             # To check whether the user is activated or not
-            if user.is_activate:
+            if user.is_active:
                 # login
                 login(request, user)
                 # To go to homepage

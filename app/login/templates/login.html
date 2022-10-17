@@ -1,52 +1,33 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}" />
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  </head>
-  <body>
-    <header>
-        <div class="header-icons">
-            <a><img class="logo" src="{% static 'img/logo.png' %}"></a>
-            <div class="snsIcons">
-              <a href="https://twitter.com/TATSUYA_NISATO"><img class="snsIcon" src="{% static 'img/twitter.png' %}"></a>
-              <a href="https://www.facebook.com/profile.php?id=100049389249541"><img class="snsIcon" src="{% static 'img/facebook.png' %}"></a>
-              <a href="https://github.com/ni-m-ta"><img class="snsIcon" src="{% static 'img/github.png' %}"></a>
-              <a href="{% url 'Login' %}"><img class="snsIcon" src="{% static 'img/login.png' %}"></a>
-           </div>
-        </div>
-        <div class="header-options">
-          <a class="header-option">授業の様子</a>
-          <a class="header-option">教授の様子</a>
-          <a class="header-option">授業を評価</a>
-          <a class="header-option">教授を評価</a>
-        </div>
-    </header>
-    <div class="top-login">
-        <div class="top-container container">
-          <div class="reg">
-            <form method="post" action="{url 'Login' %}">
-              {% csrf_token %}
 
-              <table class="reg_form">
-                <tr>
-                  <td><label for="userid">UserID: </label> </td>
-                  <td><input type="text" name="userid"></td>
-                  <td><label for="password">Password: </label></td>
-                  <td><input type="password" name="password"></td>
-                </tr>
-              </table>
+</head>
+<body>
+<h1>ログイン画面</h1>
 
-              <input type="submit" class="btn" value="Login">
-            </form>
-          </div>
-          <p class="message">Do you have an account?: </p>
-          <a href="{% url 'signup' %}">Create your account</a>
-        </div>
-    </div>
-  </body>
+<div class="reg">
+  <form method="post" action="{% url 'Login' %}">
+    {% csrf_token %}
+
+    <table class="reg_form">
+    <tr>
+    <td><label for="userid">ユーザーID:</label></td>
+    <td><input type="text" name="userid"></td>
+    <td><label for="password">パスワード：</label></td>
+    <td><input type="password" name="password"></td>
+    </tr>
+    </table>
+
+    <input type="submit" class="btn" value="Login">
+ </form>
+</div>
+   <p class="message">アカウントをお持ちですか？：
+   <a href="{% url 'signup' %}">アカウントを作成</a>
+   </p>
+</body>
 </html>

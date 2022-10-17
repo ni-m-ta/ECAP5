@@ -7,5 +7,5 @@ from django.contrib.auth.decorators import login_required
 # Myaccount
 @login_required
 def myaccount(request):
-    params = {"UserID": request.user, }
+    params = {"userID": request.user, }
     return render(request, "myaccount.html", params)
