@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
-    <title>ECAP</title>
+    <title>My Account</title>
   </head>
   <body>
     <header>
         <div class="header-icons">
-            <a><img class="logo" src="{% static 'img/logo.png' %}"></a>
+            <a href="{% url 'home' %}"><img class="logo" src="{% static 'img/logo.png' %}"></a>
             <div class="snsIcons">
               <a href="https://twitter.com/TATSUYA_NISATO"><img class="snsIcon" src="{% static 'img/twitter.png' %}"></a>
               <a href="https://www.facebook.com/profile.php?id=100049389249541"><img class="snsIcon" src="{% static 'img/facebook.png' %}"></a>
               <a href="https://github.com/ni-m-ta"><img class="snsIcon" src="{% static 'img/github.png' %}"></a>
+              <a href="{% url 'Logout' %}"><img class="snsIcon" src="{% static 'img/login.png' %}"></a>
            </div>
         </div>
         <div class="header-options">
@@ -25,8 +26,8 @@
           <a class="header-option">教授を評価</a>
         </div>
     </header>
-    <div class="body-top">
-      <div class="top-container container">
+    <div class="top-acc">
+      <div class="container">
         <h1>Welcome {{ userID }}!</h1>
         <p>
             You can logout from: 
@@ -45,5 +46,15 @@
       </div>
     </footer>
     <div id="like_button_container"></div>
+    <footer>
+      <div class="footer-containter container">
+        <div class="footer-options">
+          <a class="footer-option">Privacy Policy</a>
+          <a class="footer-option">Contact Form</a>
+          <a class="footer-option">Site Map</a>
+        </div> 
+        <p class="copyright">&COPY; Tatsuya Nisato</p>
+      </div>
+    </footer>
   </body>
 </html>

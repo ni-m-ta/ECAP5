@@ -2,7 +2,8 @@ body {
     margin: 0;
     font-family: "Hiragino Kaku Gothic ProN";
     padding-top: 150px;   
-    color: rgb(70, 70, 70); 
+    color: rgb(70, 70, 70);
+    position: relative;
   }
   
   a {
@@ -12,6 +13,11 @@ body {
   ul{
     margin: 0 auto;
     padding: 0;
+  }
+
+  .container{
+    width: 90%;
+    margin: 0 auto;
   }
 
   header{
@@ -71,67 +77,13 @@ body {
         border-color: rgb(150, 250, 170);
       }
 
-  .body-top{
-    height: 400px;
-    width: 100%;
-  }
-
-    .container{
-      width: 90%;
-      margin: 0 auto;
-    }
-
-    .top-container{
-      display: flex;
-      justify-content: space-around;
-    }
-
-      .lead{
-        height: 300px;
-        width: 60%;
-        margin: 0;
-        font-size: 30px;
-        letter-spacing: 0.25em;
-      }
-
-      .start{
-        height: 300px;
-        width: 28%;
-        margin-top: 80px;
-        text-align: center;
-      }
-
-        .start-btn{
-          height: 60px;
-          width: 100%;
-          background-color: rgba(150, 250, 170, 0.8);
-          color: white;
-          display: block;
-          text-align: center;
-          line-height: 60px;
-        }
-
-  .body-middle{
-    height: 300px;
-    width: 100%;
-  }
-
-    .middle-container{
-      display: flex;
-      justify-content: space-around;
-      text-align: center;
-    }
-
-      .middle-option{
-        height: 300px;
-        width: 20%;
-      }
-
   footer{
     height: 100px;
     width: 100%;
     background-color: gray;
     color: white;
+    position: absolute;
+    bottom: 0;
   }
 
     .footer-options{

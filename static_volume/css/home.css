@@ -1,0 +1,50 @@
+.body-top{
+    height: 400px;
+    width: 100%;
+  }
+
+    .top-container{
+      display: flex;
+      justify-content: space-around;
+    }
+
+      .lead{
+        height: 300px;
+        width: 60%;
+        margin: 0;
+        font-size: 30px;
+        letter-spacing: 0.25em;
+      }
+
+      .start{
+        height: 300px;
+        width: 28%;
+        margin-top: 80px;
+        text-align: center;
+      }
+
+        .start-btn{
+          height: 60px;
+          width: 100%;
+          background-color: rgba(150, 250, 170, 0.8);
+          color: white;
+          display: block;
+          text-align: center;
+          line-height: 60px;
+        }
+
+  .body-middle{
+    height: 300px;
+    width: 100%;
+  }
+
+    .middle-container{
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+    }
+
+      .middle-option{
+        height: 300px;
+        width: 20%;
+      }
