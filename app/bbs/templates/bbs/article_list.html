@@ -1,4 +1,4 @@
-{% extends './base.html' %}
+{% extends 'layout.html' %}
 
 {% block content %}
 
@@ -16,9 +16,15 @@
                 評価日時 : {{ article.create_at|date:"Y-m-j H:i" }}<br>
                 更新日時 : {{ article.update_at|date:"Y-m-j H:i" }}
             </td>
-            <td>{{ atcile.content }}</td>
+            <td>{{ article.content }}</td>
         </tr>
         {% endfor %}
     </table>
+
+    {% if user.is_authenticated %}
+    <p>
+        <a href="{% url 'bbs:create' %}" class="btn btn-outline-primary">新規投稿</a>
+    </p>
+    {% endif %}
 
 {% endblock %}
