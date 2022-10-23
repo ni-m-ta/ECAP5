@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
+<div class="body-top">
+    <div class="top-container container">
+      <div class="lead">
+        <h1>Be a Global Leader<br>with<br>AIU Spilits</h1>
+      </div>
+      <div class="start">
+        <p>世界で活躍するリーダーになるべく<br>共に学び共に成長しよう。</p>
+        <a class="start-btn btn" href="#">最初の一歩</a>
+      </div>
+    </div>
+  </div>
+  <div class="body-middle">
+    <div class="middle-container container">
+      <div class="middle-option">
+        <a><img class="classes-img" src="{% static 'img/classes.png' %}"></a>
+        <p>授業の様子</p>
+      </div>
+      <div class="middle-option">
+        <a><img class="professors-img" src="{% static 'img/professors.png' %}"></a>
+        <p>教授の様子</p>
+      </div>
+      <div class="middle-option">
+        <a><img class="evaluateClasses-img" src="{% static 'img/evaluateClasses.png' %}"></a>
+        <p>授業を評価</p>
+      </div>
+      <div class="middle-option">
+        <a><img class="evaluateProfessors-img" src="{% static 'img/evaluateProfessors.png' %}"></a>
+        <p>教授を評価</p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
