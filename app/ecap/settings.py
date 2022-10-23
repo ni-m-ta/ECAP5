@@ -35,6 +35,7 @@ ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 # Application definition
 
 INSTALLED_APPS = [
+    "professors.apps.ProfessorsConfig",
     "accounts.apps.AccountsConfig",
     "bbs.apps.BbsConfig",
     "home.apps.HomeConfig",

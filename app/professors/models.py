@@ -9,7 +9,7 @@ class Article(models.Model):
     author = models.ForeignKey(
         'auth.User',
         on_delete=models.CASCADE,
-        related_name='author_bbs',
+        related_name='author_professors',
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -18,4 +18,4 @@ class Article(models.Model):
         return self.content
 
     def get_absolute_url(self):
-        return reverse('bbs:detail', kwargs={'pk': self.pk})
+        return reverse('professors:detail', kwargs={'pk': self.pk})
