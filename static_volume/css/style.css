@@ -1,9 +1,14 @@
+html{
+  min-height: 100%;
+  position: relative;
+}
+
 body {
     margin: 0;
     font-family: "Hiragino Kaku Gothic ProN";
     padding-top: 150px;   
     color: rgb(70, 70, 70);
-    position: relative;
+    margin-bottom: 10px;
   }
   
   a {
@@ -13,6 +18,10 @@ body {
   ul{
     margin: 0 auto;
     padding: 0;
+  }
+
+  .body{
+    padding-bottom: 100px;
   }
 
   .container{
@@ -84,6 +93,7 @@ body {
     color: white;
     position: absolute;
     bottom: 0;
+    left: 0;
   }
 
     .footer-options{

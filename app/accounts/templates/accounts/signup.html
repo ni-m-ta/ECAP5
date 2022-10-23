@@ -1,14 +1,19 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-
-    <h1>ユーザー登録</h1>   
-    <section class="common-form">
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">登録</button>
-        </form>
-    </section>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}"/>
+<div class="container">
+    <h1>ユーザー登録</h1>
+    <div class="top-sign">
+        <section>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">登録</button>
+            </form>
+        </section>
+    </div>
+</div>
 
 {% endblock %}

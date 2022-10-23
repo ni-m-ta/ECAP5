@@ -1,7 +1,8 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-
+{% load static %}
+<div class="container">
     <h1>投稿の削除</h1>
     <p>以下の投稿を削除しますか?</p>
     <p>{{ article.content }}</p>
@@ -15,5 +16,6 @@
         <a href="JavaScript:history.back()" class="btn btn-outline-primary">削除しないで戻る</a>
         <button type="submit" class="submit delete btn btn-danger">削除する</button>
     </form>
+</div>
 
 {% endblock %}

@@ -1,33 +1,7 @@
-.top-reg{
-    padding-bottom: 100px;
-    padding-bottom: 15%;
-}
-
-h1{
-    text-align: center;
-}
-
-.reg{
-    background-color: #EEEEEE;
-    margin-left: 15%;
-    margin-right: 15%;
-}
-
-table.reg_form{
-    width: 100%;
-    border-spacing: 10px 30px;
+.top-sign{
+    height: 270px;
+    width: 90%;
+    background-color: rgb(225, 225, 225);
     padding-left: 20px;
-}
-
-.btn{
-    color: #fff;
-    background-color: rgb(80, 160, 100);
-    font-size: 1.0em;
-    padding: 10px 30px;
-    margin-left: 80%;
-}
-
-.btn:hover{
-    color: #fff;
-    background-color: rgb(150, 250, 170);
+    margin: 0 auto;
 }
