@@ -5,7 +5,13 @@
 <div class="container">
     <h1>授業評価の削除</h1>
     <p>以下の投稿を削除しますか?</p>
-    <p>{{ article.content }}</p>
+    <p>授業: {{ article.course }}</p>
+    <p>教授: {{ article.professor }}</p>
+    <p>満足度: {{ article.satisfaction }}</p>
+    <p>詰み度(1:余裕~5:苦痛): {{ article.hard }}</p>
+    <p>教科書: {{ article.textbook }}</p>
+    <p>出席: {{ article.attendance }}</p>
+    <p>投稿内容: {{ article.comment }}</p>
     <p>{{ article.user_name }}</p>
     <p>{{ article.author }}</p>
     <p>{{ article.created_at|date:"Y-m-j H:i:s" }}</p>
