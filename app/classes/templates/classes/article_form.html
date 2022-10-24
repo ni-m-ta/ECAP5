@@ -7,6 +7,7 @@
 
     <form action="" method="post">
         {% csrf_token %}
+        <p>大学名: {{ form.college }}</p>
         <p>授業: {{ form.course }}</p>
         <p>教授(アルファベットで記名): {{ form.professor }}</p>
         <p>満足度(1:不満足~5:満足): {{ form.satisfaction }}</p>

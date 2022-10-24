@@ -25,13 +25,18 @@ HARD_CHOICES = [
     (5, ("5")),
 ]
 
+COLLEGE_CHOICES = [
+    ("国際教養大学", ("国際教養大学")),
+]
+
 
 class Article(models.Model):
+    college = models.CharField(max_length=50, choices=COLLEGE_CHOICES)
     professor = models.CharField(max_length=200)
     comment = models.TextField(max_length=1000)
     attendance = models.CharField(max_length=10, choices=ATTENDANCE_CHOICES)
-    satisfaction = models.IntegerField(choices=SATISFACTION_CHOICES, default=1)
-    hard = models.IntegerField(choices=HARD_CHOICES, default=1)
+    satisfaction = models.IntegerField(choices=SATISFACTION_CHOICES)
+    hard = models.IntegerField(choices=HARD_CHOICES)
 
     author = models.ForeignKey(
         'auth.User',
