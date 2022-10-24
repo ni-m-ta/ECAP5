@@ -3,15 +3,15 @@ from django.urls import reverse
 
 
 TEXTBOOK_CHOICES = [
-    (1, ("必須")),
-    (2, ("不要")),
+    ("必須", ("必須")),
+    ("不要", ("不要")),
 ]
 
 ATTENDANCE_CHOICES = [
-    (1, ("毎回")),
-    (2, ("不定期")),
-    (3, ("初回のみ")),
-    (4, ("無し")),
+    ("毎回", ("毎回")),
+    ("不定期", ("不定期")),
+    ("初回のみ", ("初回のみ")),
+    ("無し", ("無し")),
 ]
 
 SATISFACTION_CHOICES = [
@@ -35,8 +35,8 @@ class Article(models.Model):
     course = models.CharField(max_length=50)
     comment = models.TextField(max_length=1000)
     professor = models.CharField(max_length=50)
-    textbook = models.IntegerField(choices=TEXTBOOK_CHOICES, default=1)
-    attendance = models.IntegerField(choices=ATTENDANCE_CHOICES, default=1)
+    textbook = models.CharField(max_length=10, choices=TEXTBOOK_CHOICES)
+    attendance = models.CharField(max_length=10, choices=ATTENDANCE_CHOICES)
     satisfaction = models.IntegerField(choices=SATISFACTION_CHOICES, default=1)
     hard = models.IntegerField(choices=HARD_CHOICES, default=1)
 
