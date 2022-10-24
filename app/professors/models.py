@@ -48,7 +48,7 @@ class Article(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.content
+        return self.comment
 
     def get_absolute_url(self):
         return reverse('professors:detail', kwargs={'pk': self.pk})
