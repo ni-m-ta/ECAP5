@@ -7,9 +7,12 @@
 
     <form action="" method="post">
         {% csrf_token %}
-        <p>教授名: {{ form.title }}</p>
+        <p>教授名: {{ form.professor }}</p>
+        <p>満足度(1:不満足~5:満足): {{ form.satisfaction }}</p>
+        <p>厳しさ(1:優しい~5:厳しい): {{ form.hard }}</p>
+        <p>出席: {{ form.attendance }}</p>
         <p>本文: <br>
-            {{ form.content }}
+            {{ form.comment }}
         </p>
         <button type="submit" class="submit btn btn-outline-primary">{{ object|yesno:'更新,作成'}}</button>
     </form>

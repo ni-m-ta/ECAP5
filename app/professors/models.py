@@ -2,9 +2,36 @@ from django.db import models
 from django.urls import reverse
 
 
+ATTENDANCE_CHOICES = [
+    ("毎回", ("毎回")),
+    ("不定期", ("不定期")),
+    ("初回のみ", ("初回のみ")),
+    ("無し", ("無し")),
+]
+
+SATISFACTION_CHOICES = [
+    (1, ("1")),
+    (2, ("2")),
+    (3, ("3")),
+    (4, ("4")),
+    (5, ("5")),
+]
+
+HARD_CHOICES = [
+    (1, ("1")),
+    (2, ("2")),
+    (3, ("3")),
+    (4, ("4")),
+    (5, ("5")),
+]
+
+
 class Article(models.Model):
-    title = models.CharField(max_length=200)
-    content = models.TextField(max_length=1000)
+    professor = models.CharField(max_length=200)
+    comment = models.TextField(max_length=1000)
+    attendance = models.CharField(max_length=10, choices=ATTENDANCE_CHOICES)
+    satisfaction = models.IntegerField(choices=SATISFACTION_CHOICES, default=1)
+    hard = models.IntegerField(choices=HARD_CHOICES, default=1)
 
     author = models.ForeignKey(
         'auth.User',

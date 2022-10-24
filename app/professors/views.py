@@ -18,7 +18,7 @@ class DetailView(generic.DetailView):
 
 class CreateView(LoginRequiredMixin, generic.edit.CreateView):
     model = Article
-    fields = ['content', 'title', ]
+    fields = ['comment', 'professor', 'attendance', 'satisfaction', 'hard', ]
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -27,7 +27,7 @@ class CreateView(LoginRequiredMixin, generic.edit.CreateView):
 
 class UpdateView(LoginRequiredMixin, generic.edit.UpdateView):
     model = Article
-    fields = ['content', 'title', ]
+    fields = ['comment', 'professor', 'attendance', 'satisfaction', 'hard', ]
 
     def dispatch(self, request, *args, **kwargs):
         obj = self.get_object()

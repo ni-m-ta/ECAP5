@@ -13,11 +13,9 @@
         {% for article in object_list %}
         <tr>
             <td>
-                <a href="{% url 'professors:detail' article.pk %}">{{ article.title }} {{ article.author }}</a>
-                評価日時 : {{ article.create_at|date:"Y-m-j H:i" }}<br>
-                更新日時 : {{ article.update_at|date:"Y-m-j H:i" }}
+                <a href="{% url 'professors:detail' article.pk %}">{{ article.professor }} {{ article.author }}</a>
             </td>
-            <td>{{ article.content }}</td>
+            <td>{{ article.comment }}</td>
         </tr>
         {% endfor %}
     </table>
