@@ -20,7 +20,7 @@
     </form>
     <div class="table table-striped table-hover">
         {% for article in object_list %}
-        <a href="{% url 'professors:detail' article.pk %}">{{ article.professor }} {{ article.author }}</a>
+        <a href="{% url 'professors:detail' article.pk %}">{{ article.professor_first }} {{ article.professor_last }} {{ article.author }}</a>
         {% endfor %}
     </div>
 

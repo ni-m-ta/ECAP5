@@ -32,7 +32,8 @@ COLLEGE_CHOICES = [
 
 class Article(models.Model):
     college = models.CharField(max_length=50, choices=COLLEGE_CHOICES)
-    professor = models.CharField(max_length=200)
+    professor_first = models.CharField(max_length=50)
+    professor_last = models.CharField(max_length=50)
     comment = models.TextField(max_length=1000)
     attendance = models.CharField(max_length=10, choices=ATTENDANCE_CHOICES)
     satisfaction = models.IntegerField(choices=SATISFACTION_CHOICES)

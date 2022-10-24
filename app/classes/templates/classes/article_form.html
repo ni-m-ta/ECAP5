@@ -9,7 +9,8 @@
         {% csrf_token %}
         <p>大学名: {{ form.college }}</p>
         <p>授業: {{ form.course }}</p>
-        <p>教授(アルファベットで記名): {{ form.professor }}</p>
+        <p>教授名(姓 or First Name): {{ form.professor_first }}</p>
+        <p>教授名(名 or Last Name): {{ form.professor_last }}</p>
         <p>満足度(1:不満足~5:満足): {{ form.satisfaction }}</p>
         <p>詰み度(1:余裕~5:苦痛): {{ form.hard }}</p>
         <p>教科書: {{ form.textbook }}</p>

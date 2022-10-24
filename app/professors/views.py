@@ -43,7 +43,7 @@ class DetailView(generic.DetailView):
 
 class CreateView(LoginRequiredMixin, generic.edit.CreateView):
     model = Article
-    fields = ['college', 'comment', 'professor', 'attendance', 'satisfaction', 'hard', ]
+    fields = ['college', 'comment', 'professor_first', 'professor_last' 'attendance', 'satisfaction', 'hard', ]
 
     def form_valid(self, form):
         form.instance.author = self.request.user

@@ -8,7 +8,8 @@
     <form action="" method="post">
         {% csrf_token %}
         <p>大学名: {{ form.college }}</p>
-        <p>教授名: {{ form.professor }}</p>
+        <p>教授名(姓 or First Name): {{ form.professor_first }}</p>
+        <p>教授名(名 or Last Name): {{ form.professor_last }}</p>
         <p>満足度(1:不満足~5:満足): {{ form.satisfaction }}</p>
         <p>厳しさ(1:優しい~5:厳しい): {{ form.hard }}</p>
         <p>出席: {{ form.attendance }}</p>
