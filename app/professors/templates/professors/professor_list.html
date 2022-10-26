@@ -13,20 +13,20 @@
                     <button type="submit" class="submit btn">検索する</button>
                     <a href="./" class="submit btn">クリア</a>
                     <input type="checkbox" name="college" value="1" class="">大学名
-                    <input type="checkbox" name="professor" value="2" class="">教授名
+                    <input type="checkbox" name="name" value="2" class="">教授名
                 </div>
             </div>
         </div>
     </form>
     <div class="table table-striped table-hover">
-        {% for article in object_list %}
-        <a href="{% url 'professors:detail' article.pk %}">{{ article.professor_first }} {{ article.professor_last }} {{ article.author }}</a>
+        {% for professor in professor_list %}
+        <a href="detail/{{ professor.id }}">{{ professor.name }}</a>
         {% endfor %}
     </div>
 
     {% if user.is_authenticated %}
     <p>
-        <a href="{% url 'professors:create' %}" class="btn btn-outline-primary">新規投稿</a>
+        <a href="{% url 'professors:create' %}" class="btn btn-outline-primary">評価する教授を追加する</a>
     </p>
     {% endif %}
 </div>

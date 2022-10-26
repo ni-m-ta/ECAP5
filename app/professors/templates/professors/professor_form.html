@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{% load static %}
+<h1>
+  {% if not form.instance.pk %}
+  教授を登録する
+  {% else %}
+  教授名・教授評価を更新する
+  {% endif %}
+</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class='btn btn-primary' value="登録">
+  </form>
+{% endblock %}

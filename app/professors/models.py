@@ -30,10 +30,24 @@ COLLEGE_CHOICES = [
 ]
 
 
-class Article(models.Model):
+class Professor(models.Model):
     college = models.CharField(max_length=50, choices=COLLEGE_CHOICES)
-    professor_first = models.CharField(max_length=50)
-    professor_last = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
+
+    author = models.ForeignKey(
+        'auth.User',
+        on_delete=models.DO_NOTHING,
+        null=True,
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Evaluation(models.Model):
+    name = models.ForeignKey(Professor, on_delete=models.CASCADE, related_name='evaluation_names')
     comment = models.TextField(max_length=1000)
     attendance = models.CharField(max_length=10, choices=ATTENDANCE_CHOICES)
     satisfaction = models.IntegerField(choices=SATISFACTION_CHOICES)
@@ -42,13 +56,11 @@ class Article(models.Model):
     author = models.ForeignKey(
         'auth.User',
         on_delete=models.CASCADE,
-        related_name='author_professors',
+        related_name='evaluation_professors',
+        null=True,
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.comment
-
-    def get_absolute_url(self):
-        return reverse('professors:detail', kwargs={'pk': self.pk})
