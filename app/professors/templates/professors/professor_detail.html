@@ -7,7 +7,6 @@
     <div>
         <p>大学名: {{ professor_detail.college }}</p>
         <p>教授名: {{ professor_detail.name }}</p>
-        <a href="{% url 'professors:update' pk=professor_detail.pk %}">更新</a>
     </div>
     <div>
         {% for evaluation in professor_detail.evaluation_names.all %}
@@ -23,9 +22,8 @@
         {% endfor %}
     </div>
     <div class="mt-4">
-        <a href="{% url 'professors:create2' %}" class="btn btn-outline-primary mr-2">編集</a>
+        <a href="{% url 'professors:create2' %}" class="btn btn-outline-primary mr-2">評価を追加</a>
         <a href="{% url 'professors:list' %}" class="btn btn-outline-primary">一覧に戻る</a>
-        <a href="{% url 'professors:delete' pk=professor_detail.pk %}" class="btn btn-danger ml-5">削除</a>
     </div>
 </div>
 

@@ -11,5 +11,4 @@ urlpatterns = [
     path('create2/', views.ProfessorCreateView2.as_view(), name='create2'),
     path('update/<int:pk>', views.ProfessorUpdateView.as_view(), name='update'),
     path('update2/<int:pk>', views.ProfessorUpdateView2.as_view(), name='update2'),
-    path('delete/<int:pk>', views.ProfessorDeleteView.as_view(), name='delete'),
 ]

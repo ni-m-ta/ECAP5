@@ -75,9 +75,3 @@ class ProfessorUpdateView2(LoginRequiredMixin, generic.UpdateView):
     fields = ("satisfaction", "hard", "attendance", "comment")
     template_name = "professors/professor_form.html"
     success_url = reverse_lazy("professors:list")
-
-
-class ProfessorDeleteView(LoginRequiredMixin, generic.DeleteView):
-    model = Professor
-    template_name = "professors/professor_delete.html"
-    success_url = reverse_lazy("professors:list")
