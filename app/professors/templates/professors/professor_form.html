@@ -2,13 +2,7 @@
 
 {% block content %}
 {% load static %}
-<h1>
-  {% if not form.instance.pk %}
-  教授を登録する
-  {% else %}
-  教授名・教授評価を更新する
-  {% endif %}
-</h1>
+<h1>教授を登録・評価する</h1>
   <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
