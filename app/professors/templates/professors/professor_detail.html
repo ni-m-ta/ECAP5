@@ -18,7 +18,11 @@
         <p>{{ evaluation.created_at|date:"Y-m-j H:j:s" }}<br>
             {{ evaluation.updated_at|date:"Y-m-j H:i:s" }}
         </p>
+        {% if request.user.id == evaluation.evaluator_id %}
         <a href="{% url 'professors:update2' pk=evaluation.pk %}">評価を更新</a>
+        {% else %}
+        <p>だめです</p>
+        {% endif %}
         {% endfor %}
     </div>
     <div class="mt-4">

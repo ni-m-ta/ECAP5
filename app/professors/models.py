@@ -33,12 +33,6 @@ COLLEGE_CHOICES = [
 class Professor(models.Model):
     college = models.CharField(max_length=50, choices=COLLEGE_CHOICES)
     name = models.CharField(max_length=50)
-
-    author = models.ForeignKey(
-        'auth.User',
-        on_delete=models.DO_NOTHING,
-        null=True,
-    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -53,12 +47,13 @@ class Evaluation(models.Model):
     satisfaction = models.IntegerField(choices=SATISFACTION_CHOICES)
     hard = models.IntegerField(choices=HARD_CHOICES)
 
-    author = models.ForeignKey(
+    evaluator = models.ForeignKey(
         'auth.User',
         on_delete=models.CASCADE,
         related_name='evaluation_professors',
         null=True,
     )
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

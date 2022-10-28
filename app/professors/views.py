@@ -60,6 +60,10 @@ class ProfessorCreateView2(LoginRequiredMixin, generic.CreateView):
     template_name = "professors/professor_form.html"
     success_url = reverse_lazy("professors:list")
 
+    def form_valid(self, form):
+        form.instance.evaluator = self.request.user
+        return super(ProfessorCreateView2, self).form_valid(form)
+
 
 class ProfessorUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Professor
@@ -75,3 +79,11 @@ class ProfessorUpdateView2(LoginRequiredMixin, generic.UpdateView):
     fields = ("satisfaction", "hard", "attendance", "comment")
     template_name = "professors/professor_form.html"
     success_url = reverse_lazy("professors:list")
+
+    def dispatch(self, request, *args, **kwargs):
+        obj = self.get_object()
+
+        if obj.evaluator != self.request.user:
+            raise PermissionDenied('You do not have permission to edit.')
+
+        return super(ProfessorUpdateView2, self).dispatch(request, *args, **kwargs)
