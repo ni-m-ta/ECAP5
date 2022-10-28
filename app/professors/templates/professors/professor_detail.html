@@ -20,6 +20,7 @@
         </p>
         {% if request.user.id == evaluation.evaluator_id %}
         <a href="{% url 'professors:update2' pk=evaluation.pk %}">評価を更新</a>
+        <a href="{% url 'professors:delete' pk=evaluation.pk %}" class="btn btn-danger ml-5">削除</a>
         {% else %}
         <p>だめです</p>
         {% endif %}

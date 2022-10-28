@@ -87,3 +87,9 @@ class ProfessorUpdateView2(LoginRequiredMixin, generic.UpdateView):
             raise PermissionDenied('You do not have permission to edit.')
 
         return super(ProfessorUpdateView2, self).dispatch(request, *args, **kwargs)
+
+
+class ProfessorDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Evaluation
+    template_name = "professors/professor_delete.html"
+    success_url = reverse_lazy("professors:list")
