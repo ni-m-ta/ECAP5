@@ -2,10 +2,14 @@
 
 {% block content %}
 {% load static %}
-<h1>教授を登録・評価する</h1>
-  <form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" class='btn' value="登録">
-  </form>
+<div class="container">
+  <h1>教授を登録・評価する</h1>
+  <div class="option-detail">
+      <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class='btn' value="登録">
+      </form>
+  </div>
+</div>
 {% endblock %}

@@ -31,8 +31,8 @@ COLLEGE_CHOICES = [
 
 
 class Professor(models.Model):
-    college = models.CharField(max_length=50, choices=COLLEGE_CHOICES)
-    name = models.CharField(max_length=50)
+    college = models.CharField(max_length=50, choices=COLLEGE_CHOICES, verbose_name='大学名')
+    name = models.CharField(max_length=50, verbose_name='教授名')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -41,11 +41,11 @@ class Professor(models.Model):
 
 
 class Evaluation(models.Model):
-    name = models.ForeignKey(Professor, on_delete=models.CASCADE, related_name='evaluation_names', null=True)
-    comment = models.TextField(max_length=1000)
-    attendance = models.CharField(max_length=10, choices=ATTENDANCE_CHOICES)
-    satisfaction = models.IntegerField(choices=SATISFACTION_CHOICES)
-    hard = models.IntegerField(choices=HARD_CHOICES)
+    name = models.ForeignKey(Professor, on_delete=models.CASCADE, related_name='evaluation_names', null=True, verbose_name='教授名')
+    comment = models.TextField(max_length=1000, verbose_name='評価コメント')
+    attendance = models.CharField(max_length=10, choices=ATTENDANCE_CHOICES, verbose_name='出席')
+    satisfaction = models.IntegerField(choices=SATISFACTION_CHOICES, verbose_name='満足度')
+    hard = models.IntegerField(choices=HARD_CHOICES, verbose_name='厳しさ度')
 
     evaluator = models.ForeignKey(
         'auth.User',

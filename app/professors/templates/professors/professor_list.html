@@ -10,7 +10,7 @@
         <div class="">
             <div class="">
                 <input name="query" value="{{ request.GET.query }}" type="text" class="">
-                <div class="">
+                <div class="search-btns">
                     <button type="submit" class="btn submit">検索する</button>
                     <a href="./" class="btn clear">クリア</a>
                     <input type="checkbox" name="college" value="1" class="">大学名
@@ -28,6 +28,7 @@
         <tr>
             <td>{{ professor.college }}</td>
             <td><a href="detail/{{ professor.id }}">{{ professor.name }}</a></td>
+            <td>最新評価日: {{ professor.updated_at|date:"Y-m-j" }}</td>
         </tr>
         {% endfor %}
     </table>

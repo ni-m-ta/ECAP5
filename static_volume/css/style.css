@@ -143,3 +143,16 @@ body {
         padding: 0 7px;
       }
 
+      .btn-de{
+        margin: 5px;
+      }
+
+      .option-detail{
+        background-color: rgb(225, 225, 225);
+        padding: 10px;
+      }
+
+      .each-element{
+        font-weight: bold;
+      }
+
