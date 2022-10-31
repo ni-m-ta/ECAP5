@@ -2,6 +2,7 @@
 
 {% block content %}
 {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/each-option.css' %}" />
 <div class="container">
     <h1 class="mt-3 mb-4">教授評価一覧</h1>
 
@@ -10,15 +11,15 @@
             <div class="">
                 <input name="query" value="{{ request.GET.query }}" type="text" class="">
                 <div class="">
-                    <button type="submit" class="submit btn">検索する</button>
-                    <a href="./" class="submit btn">クリア</a>
+                    <button type="submit" class="btn submit">検索する</button>
+                    <a href="./" class="btn clear">クリア</a>
                     <input type="checkbox" name="college" value="1" class="">大学名
                     <input type="checkbox" name="name" value="2" class="">教授名
                 </div>
             </div>
         </div>
     </form>
-    <table class="#">
+    <table class="each-option">
         <tr>
             <th>大学名</th>
             <th>教授名</th>
@@ -33,7 +34,7 @@
 
     {% if user.is_authenticated %}
     <p>
-        <a href="{% url 'professors:create' %}" class="btn btn-outline-primary">評価する教授を追加する</a>
+        <a href="{% url 'professors:create' %}" class="btn btn-long">評価する教授を追加する</a>
     </p>
     {% endif %}
 </div>

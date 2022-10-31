@@ -21,14 +21,14 @@
             {{ evaluation.updated_at|date:"Y-m-j H:i:s" }}
         </p>
         {% if request.user.id == evaluation.evaluator_id %}
-        <a href="{% url 'professors:update2' pk=evaluation.pk %}">評価を更新</a>
-        <a href="{% url 'professors:delete' pk=evaluation.pk %}" class="btn btn-danger ml-5">削除</a>
+        <a href="{% url 'professors:update2' pk=evaluation.pk %}" class="btn btn-long">評価を更新</a>
+        <a href="{% url 'professors:delete' pk=evaluation.pk %}" class="btn btn-delete">削除</a>
         {% endif %}
         {% endfor %}
     </div>
     <div class="mt-4">
-        <a href="{% url 'professors:create2' %}" class="btn btn-outline-primary mr-2">評価を追加</a>
-        <a href="{% url 'professors:list' %}" class="btn btn-outline-primary">一覧に戻る</a>
+        <a href="{% url 'professors:create2' %}" class="btn btn-long">評価を追加</a>
+        <a href="{% url 'professors:list' %}" class="btn btn-long">一覧に戻る</a>
     </div>
 </div>
 
