@@ -7,6 +7,8 @@
     <div>
         <p>大学名: {{ professor_detail.college }}</p>
         <p>教授名: {{ professor_detail.name }}</p>
+        <p>平均満足度: {{ savg }}</p>
+        <p>平均厳しさ度: {{ havg }}</p>
     </div>
     <div>
         {% for evaluation in professor_detail.evaluation_names.all %}

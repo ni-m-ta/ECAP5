@@ -7,12 +7,12 @@ from django.urls import reverse
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
-from django.db.models import Q, Avg
+from django.db.models import Q, Avg, Prefetch
 
 
-class ProfessorList(generic.ListView):
-    model = Professor
+class ProfessorListView(generic.ListView):
     template_name = "professors/professor_list.html"
+    model = Professor
 
     def get_queryset(self):
         q_word = self.request.GET.get('query')
@@ -39,10 +39,18 @@ class ProfessorList(generic.ListView):
         return professor_list
 
 
-class ProfessorDetail(generic.DetailView):
+class ProfessorDetailView(generic.DetailView):
     model = Professor
     context_object_name = "professor_detail"
     template_name = "professors/professor_detail.html"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        prof_lista = Professor.objects.annotate(avg_satisfaction=Avg("evaluation_names__satisfaction"))
+        context['savg'] = prof_lista.get(pk=self.kwargs['pk']).avg_satisfaction
+        prof_listb = Professor.objects.annotate(avg_hard=Avg("evaluation_names__hard"))
+        context['havg'] = prof_listb.get(pk=self.kwargs['pk']).avg_hard
+        return context
 
 
 class ProfessorCreateView(LoginRequiredMixin, generic.CreateView):

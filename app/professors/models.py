@@ -41,7 +41,7 @@ class Professor(models.Model):
 
 
 class Evaluation(models.Model):
-    name = models.ForeignKey(Professor, on_delete=models.CASCADE, related_name='evaluation_names')
+    name = models.ForeignKey(Professor, on_delete=models.CASCADE, related_name='evaluation_names', null=True)
     comment = models.TextField(max_length=1000)
     attendance = models.CharField(max_length=10, choices=ATTENDANCE_CHOICES)
     satisfaction = models.IntegerField(choices=SATISFACTION_CHOICES)

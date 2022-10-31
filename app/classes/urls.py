@@ -1,14 +1,16 @@
 from django.urls import path
 from . import views
-from .models import Article
+from .models import Class, Evaluation
 from django.views import generic
 
 app_name = 'classes'
 
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
-    path('<int:pk>/', views.DetailView.as_view(), name='detail'),
-    path('create/', views.CreateView.as_view(), name='create'),
-    path('<int:pk>/update/', views.UpdateView.as_view(), name='update'),
-    path('<int:pk>/delete/', views.DeleteView.as_view(), name='delete'),
+    path('', views.ClassListView.as_view(), name='list'),
+    path('detail/<int:pk>/', views.ClassDetailView.as_view(), name='detail'),
+    path('create/', views.ClassCreateView.as_view(), name='create'),
+    path('create2/', views.ClassCreateView2.as_view(), name='create2'),
+    path('update/<int:pk>', views.ClassUpdateView.as_view(), name='update'),
+    path('update2/<int:pk>', views.ClassUpdateView2.as_view(), name='update2'),
+    path('delete/<int:pk>', views.ClassDeleteView.as_view(), name='delete'),
 ]
