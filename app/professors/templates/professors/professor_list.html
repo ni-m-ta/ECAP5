@@ -18,11 +18,18 @@
             </div>
         </div>
     </form>
-    <div class="table table-striped table-hover">
+    <table class="#">
+        <tr>
+            <th>大学名</th>
+            <th>教授名</th>
+        </tr>
         {% for professor in professor_list %}
-        <a href="detail/{{ professor.id }}">{{ professor.name }}</a>
+        <tr>
+            <td>{{ professor.college }}</td>
+            <td><a href="detail/{{ professor.id }}">{{ professor.name }}</a></td>
+        </tr>
         {% endfor %}
-    </div>
+    </table>
 
     {% if user.is_authenticated %}
     <p>
