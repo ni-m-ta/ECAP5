@@ -2,27 +2,14 @@
 
 {% block content %}
 {% load static %}
-    <div class="container">
-    <h1 class="mt-3 mb-4">{{ object|yesno:'投稿内容の更新,新規投稿の作成'}}</h1>
-
-    <form action="" method="post">
+<div class="container">
+  <h1>授業を登録・評価する</h1>
+  <div class="option-detail">
+      <form method="POST">
         {% csrf_token %}
-        <p>大学名: {{ form.college }}</p>
-        <p>授業: {{ form.course }}</p>
-        <p>教授名(姓 or First Name): {{ form.professor_first }}</p>
-        <p>教授名(名 or Last Name): {{ form.professor_last }}</p>
-        <p>満足度(1:不満足~5:満足): {{ form.satisfaction }}</p>
-        <p>詰み度(1:余裕~5:苦痛): {{ form.hard }}</p>
-        <p>教科書: {{ form.textbook }}</p>
-        <p>出席: {{ form.attendance }}</p>
-        <p>本文: <br>
-            {{ form.comment }}
-        </p>
-        <button type="submit" class="submit btn btn-outline-primary">{{ object|yesno:'更新,作成'}}</button>
-    </form>
-    <div class="mt-3">
-        <a href="JavaScript:history.back()" class="btn btn-outline-primary">戻る</a>
-    </div>
+        {{ form.as_p }}
+        <input type="submit" class='btn' value="登録">
+      </form>
+  </div>
 </div>
-
 {% endblock %}

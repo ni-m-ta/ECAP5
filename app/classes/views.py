@@ -17,13 +17,13 @@ class ClassListView(generic.ListView):
     def get_queryset(self):
         q_word = self.request.GET.get('query')
 
-        selected_class = self.request.GET.get('class')
+        selected_course = self.request.GET.get('course')
         selected_college = self.request.GET.get('college')
 
         if q_word:
-            if selected_class and selected_college:
+            if selected_course and selected_college:
                 class_list = Class.objects.filter(
-                    Q(class__icontains=q_word) | Q(college__icontains=q_word)
+                    Q(course__icontains=q_word) | Q(college__icontains=q_word)
                 )
             elif selected_college:
                 class_list = Class.objects.filter(
@@ -31,7 +31,7 @@ class ClassListView(generic.ListView):
                 )
             else:
                 class_list = Class.objects.filter(
-                    Q(class__icontains=q_word)
+                    Q(course__icontains=q_word)
                 )
         else:
             class_list = Class.objects.all()
@@ -46,13 +46,16 @@ class ClassDetailView(generic.DetailView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context['avgs'] = Class.objects.all().evaluation_set.all().annotate(avg_satisfactions=Avg('satisfaction'))
+        class_lista = Class.objects.annotate(avg_satisfaction=Avg("evaluation_courses__satisfaction"))
+        context['savg'] = class_lista.get(pk=self.kwargs['pk']).avg_satisfaction
+        class_listb = Class.objects.annotate(avg_hard=Avg("evaluation_courses__hard"))
+        context['havg'] = class_listb.get(pk=self.kwargs['pk']).avg_hard
         return context
 
 
 class ClassCreateView(LoginRequiredMixin, generic.CreateView):
     model = Class
-    fields = ("course", "college")
+    fields = ("course", "college", "name")
     template_name = "classes/class_form.html"
 
     def get_success_url(self):
@@ -61,7 +64,7 @@ class ClassCreateView(LoginRequiredMixin, generic.CreateView):
 
 class ClassCreateView2(LoginRequiredMixin, generic.CreateView):
     model = Evaluation
-    fields = ("name", "satisfaction", "hard", "attendance", "comment")
+    fields = ("course", "satisfaction", "hard", "attendance", "textbook", "comment")
     template_name = "classes/class_form.html"
     success_url = reverse_lazy("classes:list")
 
@@ -72,7 +75,7 @@ class ClassCreateView2(LoginRequiredMixin, generic.CreateView):
 
 class ClassUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Class
-    fields = ("course", "college")
+    fields = ("course", "college", "name")
     template_name = "classes/class_form.html"
 
     def get_success_url(self):
@@ -81,7 +84,7 @@ class ClassUpdateView(LoginRequiredMixin, generic.UpdateView):
 
 class ClassUpdateView2(LoginRequiredMixin, generic.UpdateView):
     model = Evaluation
-    fields = ("satisfaction", "hard", "attendance", "comment")
+    fields = ("satisfaction", "hard", "attendance", "textbook", "comment")
     template_name = "classes/class_form.html"
     success_url = reverse_lazy("classes:list")
 

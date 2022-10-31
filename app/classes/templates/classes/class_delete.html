@@ -3,27 +3,11 @@
 {% block content %}
 {% load static %}
 <div class="container">
-    <h1>授業評価の削除</h1>
-    <p>以下の投稿を削除しますか?</p>
-    <p>大学名: {{ article.college }}</p>
-    <p>授業: {{ article.course }}</p>
-    <p>教授名(姓 or First Name): {{ article.professor_first }}</p>
-    <p>教授名(名 or Last Name): {{ article.professor_last }}</p>
-    <p>満足度: {{ article.satisfaction }}</p>
-    <p>詰み度(1:余裕~5:苦痛): {{ article.hard }}</p>
-    <p>教科書: {{ article.textbook }}</p>
-    <p>出席: {{ article.attendance }}</p>
-    <p>投稿内容: {{ article.comment }}</p>
-    <p>{{ article.user_name }}</p>
-    <p>{{ article.author }}</p>
-    <p>{{ article.created_at|date:"Y-m-j H:i:s" }}</p>
-    <p>{{ article.updated_at|date:"Y-m-j H:i:s" }}</p>
-
-    <form action="" method="post">
-        {% csrf_token %}
-        <a href="JavaScript:history.back()" class="btn btn-outline-primary">削除しないで戻る</a>
-        <button type="submit" class="submit delete btn btn-danger">削除する</button>
+    <h1>本当に削除しますか?</h1>
+    <form method="post">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-delete" value="削除">
+    <a href="JavaScript:history.back()" class="btn btn-long">削除しないで戻る</a>
     </form>
 </div>
-
 {% endblock %}
