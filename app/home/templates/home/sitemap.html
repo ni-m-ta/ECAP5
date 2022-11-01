@@ -6,13 +6,14 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
 
 <div class="container">
-    <a href="{% url 'home:home' %}"><p>Home</p></a>
-    <a href="{% url 'home:privacypolicy' %}"><p>Privacy Policy</p></a>
-    <a href="{% url 'home:contactform' %}"><p>Contact Form</p></a>
-    <a href="{% url 'professors:list' %}"><p>授業評価一覧</p></a>
-    <a href="{% url 'classes:list' %}"><p>教授評価一覧</p></a>
-    <a href="{% url 'logout' %}"><p>ログイン画面</p></a>
-    <a href="{% url 'accounts/signup' %}"><p>新規会員登録画面</p></a>
+    <h1>Site Map</h1>
+    <a href="{% url 'home:home' %}" class="char-b"><p>Home</p></a>
+    <a href="{% url 'home:privacypolicy' %}" class="char-b"><p>Privacy Policy</p></a>
+    <a href="{% url 'home:contactform' %}" class="char-b"><p>Contact Form</p></a>
+    <a href="{% url 'professors:list' %}" class="char-b"><p>授業評価一覧</p></a>
+    <a href="{% url 'classes:list' %}" class="char-b"><p>教授評価一覧</p></a>
+    <a href="{% url 'logout' %}" class="char-b"><p>ログイン画面</p></a>
+    <a href="{% url 'accounts:signup' %}" class="char-b"><p>新規会員登録画面</p></a>
 </div>
 
 {% endblock %}
