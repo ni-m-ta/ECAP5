@@ -21,9 +21,6 @@
         <div class="header-icons">
             <a  href="{% url 'home:home' %}"><img class="logo" src="{% static 'img/logo.png' %}"></a>
             <div class="snsIcons">
-              <a href="https://twitter.com/TATSUYA_NISATO"><img class="snsIcon" src="{% static 'img/twitter.png' %}"></a>
-              <a href="https://www.facebook.com/profile.php?id=100049389249541"><img class="snsIcon" src="{% static 'img/facebook.png' %}"></a>
-              <a href="https://github.com/ni-m-ta"><img class="snsIcon" src="{% static 'img/github.png' %}"></a>
               {% if user.is_authenticated %}
               <a href="{% url 'logout' %}"><img class="snsIcon" src="{% static 'img/login.png' %}"></a>
               {% else %}
@@ -44,8 +41,8 @@
       <div class="footer-containter container">
         <div class="footer-options">
           <a class="footer-option" href="{% url 'home:privacypolicy' %}">Privacy Policy</a>
-          <a class="footer-option">Contact Form</a>
-          <a class="footer-option">Site Map</a>
+          <a class="footer-option" href="{% url 'home:contactform' %}">Contact Form</a>
+          <a class="footer-option" href="{% url 'home:sitemap' %}">Site Map</a>
         </div> 
         <p class="copyright">&COPY; Tatsuya Nisato</p>
       </div>

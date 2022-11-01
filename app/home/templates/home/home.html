@@ -18,20 +18,13 @@
   <div class="body-middle">
     <div class="middle-container container">
       <div class="middle-option">
-        <a><img class="classes-img" src="{% static 'img/classes.png' %}"></a>
-        <p>授業の様子</p>
+        <a href="{% url 'classes:list' %}"><img class="classes-img" src="{% static 'img/classes.png' %}"></a>
+        <p>授業をみる</p>
       </div>
       <div class="middle-option">
-        <a><img class="professors-img" src="{% static 'img/professors.png' %}"></a>
-        <p>教授の様子</p>
+        <a href="{% url 'professors:list' %}"><img class="professors-img" src="{% static 'img/evaluateProfessors.png' %}"></a>
+        <p>教授をみる</p>
       </div>
-      <div class="middle-option">
-        <a><img class="evaluateClasses-img" src="{% static 'img/evaluateClasses.png' %}"></a>
-        <p>授業を評価</p>
-      </div>
-      <div class="middle-option">
-        <a><img class="evaluateProfessors-img" src="{% static 'img/evaluateProfessors.png' %}"></a>
-        <p>教授を評価</p>
       </div>
     </div>
   </div>
