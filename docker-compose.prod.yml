@@ -9,7 +9,9 @@ services:
     restart: always
     environment:
       DOMAINS: 'ecap.website -> http://nginx:80'
-      STAGE: 'production'
+      STAGE: 'local'
+    volumes:
+      - ./docker/https-portal:/var/lib/https-portal
   web:
     build:
       context: ./app
