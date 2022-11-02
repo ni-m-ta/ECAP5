@@ -10,7 +10,7 @@ services:
       - 'web'
     restart: always
     environment:
-      DOMAINS: 'ecap.com -> http://web'
+      DOMAINS: 'ecap.com -> http://web:8000'
       STAGE: 'production'
   web:
     build:
