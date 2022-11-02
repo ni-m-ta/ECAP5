@@ -6,8 +6,11 @@ services:
     ports:
       - '80:80'
       - '443:443'
+    links:
+      - 'web'
+    restart: always
     environment:
-      DOMAINS: 'ecap.com'
+      DOMAINS: 'ecap.com -> http://web'
       STAGE: 'production'
   web:
     build:
