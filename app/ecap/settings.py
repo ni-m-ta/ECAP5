@@ -75,6 +75,8 @@ TEMPLATES = [
     },
 ]
 
+CSRF_TRUSTED_ORIGINS = ['ecap', ]
+
 WSGI_APPLICATION = 'ecap.wsgi.application'
 
 LOGIN_REDIRECT_URL = '/'
@@ -131,7 +133,6 @@ PASSWORD_HASHERS = [
 LANGUAGE_CODE = 'ja'
 
 TIME_ZONE = 'Asia/Tokyo'
-
 USE_I18N = True
 
 USE_L10N = True
