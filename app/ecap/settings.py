@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://ecap.website', ]
+CSRF_TRUSTED_ORIGINS = ['https://ecap.top', ]
 
 WSGI_APPLICATION = 'ecap.wsgi.application'
 
