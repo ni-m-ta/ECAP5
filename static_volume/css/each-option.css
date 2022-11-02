@@ -15,4 +15,23 @@
     margin: 10px 0;
 }
 
+.temp-flex{
+    width: 100%;
+    height: 0;
+}
+
+@media screen and (max-width: 480px) {
+    /* 480px以下に適用されるCSS（スマホ用） */
+    .each-option{
+        width: 100%;
+    }
+
+    .search-btns{
+        display: flex;
+        flex-wrap: wrap;
+        line-height: 43px;
+        gap: 0px 10px;
+    }
+}
+
 

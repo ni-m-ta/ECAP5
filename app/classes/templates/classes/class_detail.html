@@ -4,14 +4,18 @@
 {% load static %}
 <div class="container">
     <h1>{{ class_detail.course }}</h1>
-    <div class="option-detail">
-        <div>
+        <div class="evaluation-base">
             <p><span class="each-element">大学名: </span>{{ class_detail.college }}</p>
             <p><span class="each-element">授業名: </span>{{ class_detail.course }}</p>
+            <p><span class="each-element">教授名: </span>{{ class_detail.name }}</p>
             <p><span class="each-element">平均満足度: </span>{{ savg }}</p>
             <p><span class="each-element">平均厳しさ度: </span>{{ havg }}</p>
+            <div>
+                <a href="{% url 'classes:create2' %}" class="btn btn-long btn-de">評価を追加</a>
+                <a href="{% url 'classes:list' %}" class="btn btn-long btn-de">一覧に戻る</a>
+            </div>
         </div>
-        <div>
+        <div class="evaluation-detail">
             {% for evaluation in class_detail.evaluation_courses.all %}
             <p><span class="each-element">満足度(1:不満足~5:満足): </span>{{ evaluation.satisfaction }}</p>
             <p><span class="each-element">厳しさ(1:優しい~5:厳しい): </span>{{ evaluation.hard }}</p>
@@ -25,8 +29,7 @@
             {% endif %}
             {% endfor %}
         </div>
-    </div>
-    <div class="mt-4">
+    <div class="btn-de-low">
         <a href="{% url 'classes:create2' %}" class="btn btn-long btn-de">評価を追加</a>
         <a href="{% url 'classes:list' %}" class="btn btn-long btn-de">一覧に戻る</a>
     </div>

@@ -1,5 +1,5 @@
 .top-log{
-    height: 300px;
+    height: 350px;
     width: 60%;
     background-color: rgb(225, 225, 225);
     padding-left: 20px;
@@ -8,5 +8,13 @@
 
 .btn-signup{
     margin-top: 10px;
+}
+
+@media screen and (max-width: 480px) {
+    /* 480px以下に適用されるCSS（スマホ用） */
+    .top-log{
+        height: 350px;
+        width: 97%;
+    }
 }
 

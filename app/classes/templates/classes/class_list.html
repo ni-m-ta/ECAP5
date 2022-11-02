@@ -13,8 +13,9 @@
                 <div class="search-btns">
                     <button type="submit" class="btn submit">検索する</button>
                     <a href="./" class="btn clear">クリア</a>
-                    <input type="checkbox" name="college" value="1" class="">大学名
-                    <input type="checkbox" name="course" value="2" class="">授業名
+                    <div class="temp-flex"></div>
+                    <input type="checkbox" name="college" value="1">大学名
+                    <input type="checkbox" name="course" value="2">授業名
                 </div>
             </div>
         </div>
@@ -23,13 +24,14 @@
         <tr>
             <th>大学名</th>
             <th>授業名</th>
+            <th>最新評価日</th>
         </tr>
         {% for class in class_list %}
         <tr>
             <td>{{ class.college }}</td>
-            <td><a href="detail/{{ class.id }}">{{ class.course }}</a></td>
+            <td><a href="detail/{{ class.id }}" class="char-b">{{ class.course }}</a></td>
             <td>{{ class.name }}</td>
-            <td>最新評価日: {{ class.updated_at|date:"Y-m-j" }}</td>
+            <td>{{ class.updated_at|date:"Y-m-j" }}</td>
         </tr>
         {% endfor %}
     </table>

@@ -165,3 +165,114 @@ body {
         font-weight: bold;
       }
 
+      .btn-de-low{
+        padding-left: 10px;
+      }
+
+    .evaluation-base{
+      background-color: rgb(225, 225, 225);
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+      
+    .evaluation-detail{
+      background-color: rgb(225, 225, 225);
+      padding: 5px 10px;
+      margin-bottom: 5px;
+    }
+
+@media screen and (max-width: 959px) {
+      /* 959px以下に適用されるCSS（タブレット用） */
+      .container{
+        width: 95%;
+        margin: 0 auto;
+      }
+    
+}
+@media screen and (max-width: 480px) {
+      /* 480px以下に適用されるCSS（スマホ用） */
+      .container{
+        width: 97%;
+        margin: 0 auto;
+      }
+        
+        .header-options{
+            height: 50px;
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+        }
+    
+          .header-option{
+            height: 50px;
+            width: 40%;
+          } 
+    
+          .footer-option{
+            line-height: 30px;
+          }
+    
+        .copyright{
+          height: 29px;
+          width: 100%;
+          margin: 0;
+          border-top: 1px solid;
+          border-color: black;
+          text-align: center;
+        }
+    
+        .btn{
+          width: 100px;
+          display: inline-block;
+          border-radius: 5px;
+          background-color: rgb(50, 160, 50);
+          padding: 10px;
+          text-align: center;
+          color: white;
+        }
+    
+          .btn-delete{
+            background-color: rgb(250, 120, 120);
+            width: 250px;
+            border: 2px solid black;
+            padding: 0 7px;
+          }
+    
+          .btn-long{
+            width: 250px;
+            border: 2px solid black;
+            padding: 0 7px;
+          }
+    
+          .btn-de{
+            margin: 5px;
+          }
+    
+          .option-detail{
+            background-color: rgb(225, 225, 225);
+            padding: 10px;
+          }
+    
+          .each-element{
+            font-weight: bold;
+          }
+    
+          .btn-de-low{
+            padding-left: 10px;
+          }
+    
+        .evaluation-base{
+          background-color: rgb(225, 225, 225);
+          padding: 10px;
+          margin-bottom: 10px;
+        }
+          
+        .evaluation-detail{
+          background-color: rgb(225, 225, 225);
+          padding: 5px 10px;
+          margin-bottom: 5px;
+        }
+    
+}
+

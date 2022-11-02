@@ -31,8 +31,8 @@ COLLEGE_CHOICES = [
 
 
 class Professor(models.Model):
-    college = models.CharField(max_length=50, choices=COLLEGE_CHOICES, verbose_name='大学名')
-    name = models.CharField(max_length=50, verbose_name='教授名')
+    college = models.CharField(max_length=50, choices=COLLEGE_CHOICES, verbose_name='大学名(例: 国際教養大学)')
+    name = models.CharField(max_length=50, verbose_name='英字で教授名を入力(例:Taro Sato or Eric Raymond)')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

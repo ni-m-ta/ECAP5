@@ -5,3 +5,14 @@
     padding-left: 20px;
     margin: 0 auto;
 }
+
+
+@media screen and (max-width: 480px) {
+    /* 480px以下に適用されるCSS（スマホ用） */
+    .top-sign{
+        height: 500px;
+        width: 97%;
+        padding-left: 15px;
+        background-color: rgb(225, 225, 225);
+    }
+}

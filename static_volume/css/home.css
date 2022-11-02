@@ -48,3 +48,57 @@
         height: 200px;
         width: 20%;
       }
+
+@media screen and (max-width: 480px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+  .body-top{
+    height: 400px;
+    width: 100%;
+  }
+
+    .top-container{
+      display: flex;
+      flex-direction: column;
+    }
+
+      .lead{
+        height: 200px;
+        width: 100%;
+        margin: 0;
+        font-size: 20px;
+        letter-spacing: 0em;
+      }
+
+      .start{
+        height: 150px;
+        width: 100%;
+        margin-top: 0px;
+        text-align: center;
+      }
+
+        .start-btn{
+          height: 60px;
+          width: 100%;
+          background-color: rgba(150, 250, 170, 0.8);
+          color: white;
+          display: block;
+          text-align: center;
+          line-height: 60px;
+        }
+
+  .body-middle{
+    height: 200px;
+    width: 100%;
+  }
+
+    .middle-container{
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+    }
+
+      .middle-option{
+        height: 200px;
+        width: 45%;
+      } 
+}
