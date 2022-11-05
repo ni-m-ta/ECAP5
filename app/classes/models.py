@@ -38,12 +38,15 @@ COLLEGE_CHOICES = [
 class Class(models.Model):
     college = models.CharField(max_length=50, choices=COLLEGE_CHOICES, verbose_name='大学名')
     name = models.CharField(max_length=50, verbose_name='英字で教授名を入力(例:Taro Sato or Eric Raymond)')
-    course = models.CharField(max_length=50, verbose_name='正式な授業名を入力(例: Composition I)')
+    course = models.CharField(max_length=50, verbose_name='正式な授業名を入力(例: Composition I)、重複がある場合は末尾に順次番号を(例: Composition I, Composition I2')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.course
+
+    class Meta:
+        ordering = ['college', 'course', 'name']
 
 
 class Evaluation(models.Model):

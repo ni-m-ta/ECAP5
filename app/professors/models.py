@@ -39,6 +39,9 @@ class Professor(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ['college', 'name']
+
 
 class Evaluation(models.Model):
     name = models.ForeignKey(Professor, on_delete=models.CASCADE, related_name='evaluation_names', null=True, verbose_name='教授名')
