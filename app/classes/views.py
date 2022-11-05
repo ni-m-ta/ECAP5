@@ -73,15 +73,6 @@ class ClassCreateView2(LoginRequiredMixin, generic.CreateView):
         return super(ClassCreateView2, self).form_valid(form)
 
 
-class ClassUpdateView(LoginRequiredMixin, generic.UpdateView):
-    model = Class
-    fields = ("course", "college", "name")
-    template_name = "classes/class_form.html"
-
-    def get_success_url(self):
-        return reverse('classes:detail', kwargs={'pk': self.object.pk})
-
-
 class ClassUpdateView2(LoginRequiredMixin, generic.UpdateView):
     model = Evaluation
     fields = ("satisfaction", "hard", "attendance", "textbook", "comment")

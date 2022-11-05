@@ -73,15 +73,6 @@ class ProfessorCreateView2(LoginRequiredMixin, generic.CreateView):
         return super(ProfessorCreateView2, self).form_valid(form)
 
 
-class ProfessorUpdateView(LoginRequiredMixin, generic.UpdateView):
-    model = Professor
-    fields = ("name", "college")
-    template_name = "professors/professor_form.html"
-
-    def get_success_url(self):
-        return reverse('professors:detail', kwargs={'pk': self.object.pk})
-
-
 class ProfessorUpdateView2(LoginRequiredMixin, generic.UpdateView):
     model = Evaluation
     fields = ("satisfaction", "hard", "attendance", "comment")
