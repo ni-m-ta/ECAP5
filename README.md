@@ -9,11 +9,11 @@ This function helps students know how they should study and what they can expect
  
 # Installation
  
-Docker 20.10.17
-Django 3.2.6
-Gunicorn 20.1.0
-Ngins 1.21-alpine
-PostgreSQL 13.0-alpine
+* Docker 20.10.17
+* Django 3.2.6
+* Gunicorn 20.1.0
+* Ngins 1.21-alpine
+* PostgreSQL 13.0-alpine
  
 # Usage
  
