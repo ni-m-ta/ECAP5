@@ -17,15 +17,15 @@ PostgreSQL 13.0-alpine
  
 # Usage
  
-1.アカウント作成
-2.ログイン
-3.評価する教授もしくは授業追加する
-4.該当する教授もしくは授業を評価する
-5.完了
+1.Sign up
+2.Login
+3.Add classes or professors you want to evaluate
+4.Evaluate classes or professors
+5.Done
  
 # Author
  
-管理者: Tatsuya Nisato
+Creator: Tatsuya Nisato
 E-mail: tatsuyanisato@gmail.com
  
 # License
