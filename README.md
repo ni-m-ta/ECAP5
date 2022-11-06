@@ -17,11 +17,11 @@ This function helps students know how they should study and what they can expect
  
 # Usage
  
-1.Sign up
-2.Login
-3.Add classes or professors you want to evaluate
-4.Evaluate classes or professors
-5.Done
+1. Sign up
+2. Login
+3. Add classes or professors you want to evaluate
+4. Evaluate classes or professors
+5. Done
  
 # Author
  
