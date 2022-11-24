@@ -23,7 +23,7 @@ This function helps students know how they should study and what they can expect
 3. 評価したい教授あるいは授業を選択、もしそれらの項目がない場合は追加する
 4. 評価項目に基づいて入力
 5. 完了
-
+---------
 1. Sign up
 2. Login
 3. Add classes or professors you want to evaluate
