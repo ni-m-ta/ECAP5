@@ -28,7 +28,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
-    path('ads.txt', RedirectView.as_view(url=staticfiles_storage.url('ads.txt')))
+    path('ads.txt', RedirectView.as_view(url=staticfiles_storage.url('ads.txt'))),
+    path('robots.txt', RedirectView.as_view(url=staticfiles_storage.url('robots.txt'))),
+    path('sitemap.xml', RedirectView.as_view(url=staticfiles_storage.url('sitemap.xml'))),
 ]
 
 
